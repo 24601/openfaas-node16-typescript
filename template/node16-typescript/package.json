@@ -1,15 +1,18 @@
 {
-  "name": "openfaas-node16-typescript",
+  "name": "openfaas-node18-typescript",
   "version": "1.0.0",
-  "description": "The OpenFaas template with Node 16 and TypeScript support",
+  "description": "The OpenFaas template with Node 18 and TypeScript support",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no tests specified\" && exit 0"
   },
   "keywords": [],
-  "author": "Paweł Otto (https://github.com/pawelotto)",
+  "author": "Basit Mustafa built off work by Paweł Otto (https://github.com/pawelotto)",
   "license": "MIT",
   "dependencies": {
+    "@opentelemetry/auto-instrumentations-node": "^0.36.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.35.1",
+    "@opentelemetry/sdk-node": "^0.35.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2"
   }
