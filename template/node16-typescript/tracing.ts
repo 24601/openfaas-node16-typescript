@@ -7,9 +7,11 @@ const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumenta
 const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http');
 const { Resource } = require('@opentelemetry/resources');
 const { SemanticResourceAttributes } = require('@opentelemetry/semantic-conventions');
-
+const { NodeTracerProvider } = require('@opentelemetry/sdk-trace-node');
+import { Span } from '@opentelemetry/api';
+import { ExpressRequestInfo } from '@opentelemetry/instrumentation-express';
 const exporterOptions = {
-    url: `http://otel.${process.env.ENV_TYPE === 'production' || process.env.NODE_ENV === 'production' ? 'services' : 'develop-staging-develop'}.agileonboarding.com:4318/v1/traces`
+    url: `https://otel.agileonboard.com/v1/traces`
 }
 
 const traceExporter = new OTLPTraceExporter(exporterOptions);
@@ -34,3 +36,4 @@ process.on('SIGTERM', () => {
         .catch((error) => console.log('Error terminating tracing', error))
         .finally(() => process.exit(0));
 });
+

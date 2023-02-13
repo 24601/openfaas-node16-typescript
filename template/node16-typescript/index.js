@@ -9,7 +9,7 @@ const app = express();
 const handler = require("./function/handler");
 const bodyParser = require("body-parser");
 
-const defaultMaxSize = "100kb"; // body-parser default
+const defaultMaxSize = "10000kb"; // body-parser default
 
 app.disable("x-powered-by");
 

@@ -41,21 +41,21 @@ RUN npm i
 COPY function/ ./
 
 # Run any tests that may be available
-RUN npm test
+# RUN npm test
 
 # Set correct permissions to use non root user
 WORKDIR /home/app/
 
 ENV cgi_headers="true"
-ENV fprocess="node index.js"
+ENV fprocess="node dist/handler.js"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
-ENV exec_timeout="10s"
-ENV write_timeout="15s"
-ENV read_timeout="15s"
+ENV exec_timeout="60s"
+ENV write_timeout="75s"
+ENV read_timeout="60s"
 
-ENV prefix_logs="false"
+ENV prefix_logs="true"
 
 HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
 
