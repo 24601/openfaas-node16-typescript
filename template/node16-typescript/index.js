@@ -1,8 +1,8 @@
 // Copyright (c) Alex Ellis 2021. All rights reserved.
 // Copyright (c) OpenFaaS Author(s) 2021. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-
-"use strict";
+console.log("STARTUP: node16-typescript template");
+("use strict");
 const tracing = require("./tracing");
 const express = require("express");
 const app = express();
