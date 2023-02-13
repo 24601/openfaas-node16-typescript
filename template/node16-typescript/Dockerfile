@@ -47,7 +47,7 @@ COPY function/ ./
 WORKDIR /home/app/
 
 ENV cgi_headers="true"
-ENV fprocess="node dist/handler.js"
+ENV fprocess="node index.js"
 ENV mode="http"
 ENV upstream_url="http://127.0.0.1:3000"
 
